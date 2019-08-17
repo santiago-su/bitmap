@@ -7,7 +7,7 @@ describe('Format our input', () => {
     'cases': [{
       'nodes': 3,
       'depth': 4,
-      'matrix': [[0,0,0,1],[0,0,1,1],[0,1,1,0]]
+      'matrix': [[0, 0, 0, 1], [0, 0, 1, 1], [0, 1, 1, 0]]
     }]
   };
   const formatted = formatInput(input);
@@ -32,12 +32,12 @@ describe('Format our input with multiple cases', () => {
         {
           'nodes': 3,
           'depth': 4,
-          'matrix': [[0,0,0,1],[0,0,1,1],[0,1,1,0]]
+          'matrix': [[0, 0, 0, 1], [0, 0, 1, 1], [0, 1, 1, 0]]
         },
         {
           'nodes': 2,
           'depth': 2,
-          'matrix': [[1,0],[0,1]]
+          'matrix': [[1, 0], [0, 1]]
         }
       ]
     };

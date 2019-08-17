@@ -1,6 +1,6 @@
 process.stdin.setEncoding('utf8');
 
-let bitmapInput: string  = '';
+let bitmapInput: string = '';
 
 process.stdin.on('readable', () => {
   let chunk;

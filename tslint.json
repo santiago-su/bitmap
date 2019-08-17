@@ -1,8 +1,10 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "extends": ["tslint:recommended", "tslint-config-prettier", "tslint-plugin-prettier"],
   "rules": {
+    "prettier": true,
     "ordered-imports": true,
-    "no-console": [false]
+    "no-console": [false],
+    "quotemark": [true, "single"]
   }
 }
