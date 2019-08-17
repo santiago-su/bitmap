@@ -31,7 +31,7 @@ jobs:
 
       - run:
           name: Store test coverage
-          command: npm test -- --coverage --watchAll=false && npm codecov CODECOV_TOKEN=${CODECOV_TOKEN}
+          command: npm test -- --coverage --watchAll=false && npm run codecov CODECOV_TOKEN=${CODECOV_TOKEN}
 
 workflows:
   version: 2

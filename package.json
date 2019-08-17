@@ -4,10 +4,11 @@
   "description": "Find the nearest pixel in a bitmap",
   "main": "index.js",
   "scripts": {
-    "start": "node build/index.js",
+    "start": "node build/src/index.js",
     "build": "tsc",
     "test": "jest",
     "watch": "tsc -w",
+    "codecov": "codecov",
     "lint": "tslint --project ."
   },
   "keywords": [
