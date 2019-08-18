@@ -22,13 +22,21 @@ export interface testCase {
  */
 
 export const formatInput = (input: string): testCase => {
+  const pixels = ['0', '1'];
   const lines = input.trim().split('\n');
   const numOfTestCases = Number(lines[0]);
   const casesWithoutNumOfTestCases = lines.slice(1).join('\n').split('\n\n');
-  const cases = casesWithoutNumOfTestCases.map(y => {
-    const [nodes, , depth] = y.split('\n')[0];
-    const matrix = y.split('\n').slice(1).map(val =>
-      val.split('').map(y => Number(y)));
+  const cases = casesWithoutNumOfTestCases.map(line => {
+    const [nodes, , depth] = line.split('\n')[0];
+    const matrix = line.split('\n').slice(1).map(arr =>
+      arr.split('').map(val => {
+        if (!pixels.includes(val)) {
+          throw new Error('Bitmap should only have either 1s or 0s');
+        } else {
+          return Number(val);
+        }
+      })
+    );
     return {
       nodes: Number(nodes),
       depth: Number(depth),
