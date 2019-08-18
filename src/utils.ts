@@ -37,3 +37,14 @@ export const formatInput = (input: string): testCase => {
   });
   return { numOfTestCases, cases };
 };
+
+/**
+ * Formatting output from array of bitmaps
+ * @param input - Array of bitmap matrices.
+ * @returns string - In the i-th line for each test case
+ * 1<=i<=n, there should be written m integers f(i,1),...,f(i,m)
+ * separated by single spaces, where f(i,j) is the distance
+ * from the pixel (i,j) to the nearest white pixel.
+ */
+export const formatOutput = (input: number[][][]): string =>
+  input.map(y => y.map(z => z.join(' ')).join('\n')).join('\n\n');

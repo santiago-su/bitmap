@@ -1,4 +1,4 @@
-import { formatInput } from '../src/utils';
+import { formatInput, formatOutput } from '../src/utils';
 
 describe('Format our input', () => {
   const input = '1\n3 4\n0001\n0011\n0110';
@@ -45,3 +45,29 @@ describe('Format our input with multiple cases', () => {
     expect(formatted).toEqual(expected);
   })
 })
+
+describe('Format output with multiple cases', () => {
+  const input = [
+    [[3, 2, 1, 0], [2, 1, 0, 0], [1, 0, 0, 1]],
+    [
+      [2, 1, 0, 1, 1, 0],
+      [1, 0, 1, 1, 0, 0],
+      [1, 1, 1, 0, 0, 1],
+      [0, 0, 0, 1, 1, 0],
+      [1, 1, 1, 1, 0, 1],
+      [1, 0, 1, 0, 1, 2]
+    ]
+  ];
+  const expected = '3 2 1 0\n2 1 0 0\n1 0 0 1\n\n2 1 0 1 1 0\n1 0 1 1 0 0\n1 1 1 0 0 1\n0 0 0 1 1 0\n1 1 1 1 0 1\n1 0 1 0 1 2';
+  const result = formatOutput(input)
+  expect(result).toEqual(expected)
+});
+
+describe('Format output with one case', () => {
+  const input = [
+    [[3, 2, 1, 0], [2, 1, 0, 0], [1, 0, 0, 1]]
+  ];
+  const expected = '3 2 1 0\n2 1 0 0\n1 0 0 1';
+  const result = formatOutput(input)
+  expect(result).toEqual(expected)
+});

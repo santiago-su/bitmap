@@ -1,4 +1,5 @@
-import { formatInput } from './utils';
+import { findNearest } from './findNearest';
+import { formatInput, formatOutput } from './utils';
 
 process.stdin.setEncoding('utf8');
 
@@ -13,5 +14,7 @@ process.stdin.on('readable', () => {
 
 process.stdin.on('end', () => {
   const { cases } = formatInput(bitmapInput);
-  process.stdout.write(bitmapInput);
+  const bitmaps = cases.map(bitmapCase => findNearest(bitmapCase));
+  const formattedOutput = formatOutput(bitmaps);
+  process.stdout.write(formattedOutput)
 });
