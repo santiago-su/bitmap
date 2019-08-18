@@ -71,3 +71,10 @@ describe('Format output with one case', () => {
   const result = formatOutput(input)
   expect(result).toEqual(expected)
 });
+
+describe('It should throw an error', () => {
+  test('If pixels are not 1 or 0', () => {
+    const input = '2\n3 4\n2221\n0011\n0110\n\n2 2\n10\n01';
+    expect(() => formatInput(input)).toThrow();
+  })
+})
